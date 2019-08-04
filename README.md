@@ -1,7 +1,8 @@
 # Lyrical
 
 ## Vue Project setup
-###Install dependencies
+
+### Install dependencies
 ```
 npm install
 ```
