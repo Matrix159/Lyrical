@@ -1,32 +1,59 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <a :href="loginURL"><button>Log In</button></a>
+  <div class="app">
+    <div class="nav">
+      <div>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+      <a :href="loginURL"><button class="login-button">Log In</button></a>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+
+  $font-color: rgb(235, 235, 235);
+
+  .app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $font-color;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    a {
+      font-weight: bold;
+      color: #8bbed6;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
     }
   }
-}
+  .login-button {
+    color: $font-color;
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 3em;
+    font-size: 16px;
+    width: 5em;
+    -webkit-transition-duration: 0.5s; /* Safari */
+    transition-duration: 0.5s;
+
+    &:hover {
+      background-color: $font-color;
+      color: green;
+    }
+  }
+  body {
+    background-color: #3a393e;
+    height: 100vh;
+  }
 </style>
 
 <script lang="ts">
